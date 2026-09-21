@@ -1,0 +1,83 @@
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: var(--space-md);
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.input-wrapper:focus-within .icon {
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  padding-left: 40px;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
+  line-height: 1.5;
+}
+
+.input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.input:focus {
+  border-color: var(--color-text-tertiary);
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+[data-theme='dark'] .input:focus {
+  border-color: var(--color-text-secondary);
+  box-shadow: 0 4px 12px var(--color-shadow-lg);
+}
+
+.input.open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-color: var(--color-border);
+}
+
+.clear-button {
+  position: absolute;
+  right: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  transition: color var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+.clear-button:hover {
+  color: var(--color-text);
+  background: var(--color-bg-secondary);
+}
+
+.clear-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}

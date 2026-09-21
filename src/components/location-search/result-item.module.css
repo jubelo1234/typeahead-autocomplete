@@ -1,0 +1,65 @@
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+}
+
+.item:hover,
+.item.highlighted {
+  background: var(--color-highlight-bg);
+}
+
+.item.highlighted {
+  outline: none;
+}
+
+.item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.city-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.item.highlighted .city-name {
+  color: var(--color-highlight);
+}
+
+.location-detail {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
+.population {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pin-icon {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  margin-top: 2px;
+  transition: color var(--transition-fast);
+}
+
+.item.highlighted .pin-icon {
+  color: var(--color-highlight);
+}
